@@ -1,0 +1,40 @@
+name: Monitoring and Automated Retraining
+
+on:
+  schedule:
+    # Runs every day at 01:00 UTC
+    - cron: "0 1 * * *"
+  workflow_dispatch: {}  # allow manual trigger from GitHub UI
+
+jobs:
+  monitor-and-retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Optional: for CI, ensure a predictions.csv exists
+      # - name: Prepare sample logs for CI
+      #   run: |
+      #     mkdir -p data/logs
+      #     cp data/logs/sample_predictions.csv data/logs/predictions.csv
+
+      - name: Run monitoring
+        run: |
+          python src/monitoring/monitor.py
+
+      - name: Run automated retraining (if drift detected)
+        run: |
+          python src/training/retrain.py
+

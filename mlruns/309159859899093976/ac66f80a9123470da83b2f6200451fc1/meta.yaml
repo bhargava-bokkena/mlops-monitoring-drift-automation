@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/bhargavabokkena/mlops-training/mlops-monitoring-drift-automation/mlruns/309159859899093976/ac66f80a9123470da83b2f6200451fc1/artifacts
+end_time: 1765400968083
+entry_point_name: ''
+experiment_id: '309159859899093976'
+lifecycle_stage: active
+run_id: ac66f80a9123470da83b2f6200451fc1
+run_name: secretive-fish-773
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765400966155
+status: 3
+tags: []
+user_id: bhargavabokkena

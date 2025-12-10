@@ -1,0 +1,22 @@
+artifact_path: file:///Users/bhargavabokkena/mlops-training/mlops-monitoring-drift-automation/mlruns/309159859899093976/models/m-be73856be72d4d6e9fdb4ab247897792/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.9.6
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 3.1.4
+model_id: m-be73856be72d4d6e9fdb4ab247897792
+model_size_bytes: 177392
+model_uuid: m-be73856be72d4d6e9fdb4ab247897792
+prompts: null
+run_id: ac66f80a9123470da83b2f6200451fc1
+utc_time_created: '2025-12-10 21:09:26.169419'

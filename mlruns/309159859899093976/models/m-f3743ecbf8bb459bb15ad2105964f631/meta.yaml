@@ -1,0 +1,10 @@
+artifact_location: file:///Users/bhargavabokkena/mlops-training/mlops-monitoring-drift-automation/mlruns/309159859899093976/models/m-f3743ecbf8bb459bb15ad2105964f631/artifacts
+creation_timestamp: 1765396330315
+experiment_id: '309159859899093976'
+last_updated_timestamp: 1765396332441
+model_id: m-f3743ecbf8bb459bb15ad2105964f631
+model_type: null
+name: model
+source_run_id: 49bcd3ddd0764ca992c2f1d30cfe6f26
+status: 2
+status_message: null

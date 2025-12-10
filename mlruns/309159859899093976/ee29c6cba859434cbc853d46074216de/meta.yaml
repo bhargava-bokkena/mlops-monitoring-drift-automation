@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/bhargavabokkena/mlops-training/mlops-monitoring-drift-automation/mlruns/309159859899093976/ee29c6cba859434cbc853d46074216de/artifacts
+end_time: 1765397329381
+entry_point_name: ''
+experiment_id: '309159859899093976'
+lifecycle_stage: active
+run_id: ee29c6cba859434cbc853d46074216de
+run_name: able-bass-125
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765397327539
+status: 3
+tags: []
+user_id: bhargavabokkena

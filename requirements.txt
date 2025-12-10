@@ -1,9 +1,9 @@
-```txt
 fastapi
 uvicorn[standard]
 scikit-learn
 pandas
-numpy
-evidently
+numpy==1.26.4
+evidently==0.4.27
 mlflow
 python-dotenv
+pydantic
