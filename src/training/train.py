@@ -12,6 +12,7 @@ from sklearn.model_selection import train_test_split
 MODEL_PATH = "models/model.pkl"
 REFERENCE_PATH = "data/processed/reference.csv"
 MLFLOW_TRACKING_URI = "file:./mlruns"
+USE_MLFLOW = os.getenv("CI") != "true"  # CI=true in GitHub Actions
 
 
 def load_data():
@@ -45,14 +46,21 @@ def train_model():
     print(f"Model saved to {MODEL_PATH}")
 
     # --- Track with MLflow (local ./mlruns) ---
-    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-    mlflow.set_experiment("project3_baseline_training")
+    if USE_MLFLOW:
+        try:
+            mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
+            mlflow.set_experiment("project3_baseline_training")
 
-    with mlflow.start_run():
-        mlflow.log_metric("accuracy", acc)
-        mlflow.sklearn.log_model(model, "model")
+            with mlflow.start_run():
+                mlflow.log_metric("accuracy", acc)
+                mlflow.sklearn.log_model(model, "model")
 
-    print("MLflow run logged.")
+            print("[train] MLflow run logged.")
+        except Exception as e:
+            print(f"[train] Skipping MLflow logging due to error: {e}")
+    else:
+        print("[train] Skipping MLflow logging in CI (USE_MLFLOW = False).")
+
 
 
 if __name__ == "__main__":
